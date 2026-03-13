@@ -1199,6 +1199,197 @@
 
       border-radius: 20px;
     }
+
+    /* ========== CERTIFICATIONS SECTION ========== */
+#certifications {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  border-top: 1px solid rgba(6, 182, 212, 0.15);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.cert-card {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 20px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 30px rgba(6, 182, 212, 0.18);
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--accent);
+  transition: height 0.3s ease;
+}
+
+.cert-card:hover::before {
+  height: 100%;
+}
+
+.cert-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(6, 182, 212, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.cert-icon i {
+  font-size: 24px;
+  color: var(--accent);
+}
+
+.cert-content h3 {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.cert-issuer,
+.cert-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.cert-issuer i,
+.cert-date i {
+  color: var(--accent);
+  width: 16px;
+  font-size: 14px;
+}
+
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.cert-tag {
+  background: rgba(6, 182, 212, 0.08);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cert-tag:hover {
+  background: var(--accent);
+  color: #000;
+  transform: scale(1.05);
+}
+
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.cert-link:hover {
+  gap: 10px;
+  color: var(--text);
+}
+
+.cert-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 30px;
+  background: rgba(6, 182, 212, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  margin-top: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 150px;
+}
+
+/* Animation delays for cards */
+.cert-card:nth-child(1) { animation-delay: 0.1s; }
+.cert-card:nth-child(2) { animation-delay: 0.2s; }
+.cert-card:nth-child(3) { animation-delay: 0.3s; }
+.cert-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cert-stats {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .stat-item {
+    width: 100%;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+}
+
   </style>
 </head>
 
@@ -1397,6 +1588,115 @@
       </div>
     </div>
   </section>
+
+
+  <!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <h2>Certifications</h2>
+
+    <div class="certifications-grid">
+      <!-- الشهادة الأولى - SQL ITI -->
+      <div class="cert-card">
+        <div class="cert-icon">
+          <i class="fa-solid fa-certificate"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Database Fundamentals</h3>
+          <div class="cert-issuer">
+            <i class="fa-solid fa-building"></i>
+            <span>Maharaa-Tech (ITI MOOCA)</span>
+          </div>
+          <div class="cert-date">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Issued: 2026</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-tag">SQL</span>
+          </div>
+          <a href="#" class="cert-link">
+            <i class="fa-solid fa-up-right-from-square"></i> Show Credential
+          </a>
+        </div>
+      </div>
+
+      <!-- الشهادة الثانية - Advanced Excel -->
+      <div class="cert-card">
+        <div class="cert-icon">
+<i class="fa-regular fa-file-excel"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Advanced Excel</h3>
+          <div class="cert-issuer">
+            <i class="fa-solid fa-building"></i>
+            <span>Edraak</span>
+          </div>
+          <div class="cert-date">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Issued: 2026</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-tag">Excel Formulas</span>
+            <span class="cert-tag">Pivot Tables</span>
+            <span class="cert-tag">Power Query</span>
+            <span class="cert-tag">Power Pivot</span>
+            <span class="cert-tag">Visualisation</span>
+          </div>
+          <a href="#" class="cert-link">
+            <i class="fa-solid fa-up-right-from-square"></i> Show Credential
+          </a>
+        </div>
+      </div>
+
+
+      <!-- الشهادة الرابعة - IBM -->
+      <div class="cert-card">
+        <div class="cert-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Data Analyst Specialist</h3>
+          <div class="cert-issuer">
+            <i class="fa-solid fa-building"></i>
+            <span>Digital Egypt Pioneers Initiative - (DEPI)</span>
+          </div>
+          <div class="cert-date">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Issued: 2026</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-tag">Statistics</span>
+            <span class="cert-tag">Problem Solving</span>
+            <span class="cert-tag">Excel</span>
+            <span class="cert-tag">SQL</span>
+            <span class="cert-tag">Power BI</span>
+            <span class="cert-tag">Python</span>
+          </div>
+          <a href="#" class="cert-link">
+            <i class="fa-solid fa-up-right-from-square"></i> Show Credential
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- عرض إحصائي للشهادات -->
+    <div class="cert-stats">
+      <div class="stat-item">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Professional Certifications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Platforms (Coursera, DEPI, etc.)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Skills Verified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- SERVICES -->
   <section id="services">
