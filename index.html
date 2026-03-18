@@ -542,6 +542,11 @@
     }
 
     /* ========== EDUCATION SECTION ========== */
+
+
+
+
+
     #education {
       background: linear-gradient(rgba(0, 0, 0, 0.4),
           rgba(0, 0, 0, 0.2));
@@ -685,6 +690,209 @@
       color: #000;
       transform: scale(1.05);
     }
+
+
+
+
+    /* ========== EDUCATION GRID ========== */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .education-item {
+      display: flex;
+      gap: 20px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-radius: 15px;
+      padding: 30px;
+      transition: 0.3s;
+      animation: fadeInUp 0.8s ease-out both;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      height: 100%;
+    }
+
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(6, 182, 212, 0.15);
+      border-color: var(--accent);
+    }
+
+    .education-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: rgba(6, 182, 212, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent);
+    }
+
+    .education-icon i {
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    .education-content {
+      flex: 1;
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .education-header h3 {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .education-period {
+      background: rgba(6, 182, 212, 0.1);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+      border: 1px solid var(--accent);
+    }
+
+    .education-subtitle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .education-subtitle i {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .education-field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .education-field i {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .education-description {
+      color: var(--muted);
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .education-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .topic-tag {
+      background: rgba(6, 182, 212, 0.08);
+      color: var(--accent);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      transition: 0.3s;
+    }
+
+    .topic-tag:hover {
+      background: var(--accent);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Responsive for tablets */
+    @media (max-width: 992px) {
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .education-item {
+        padding: 25px;
+      }
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 768px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .education-item {
+        flex-direction: column;
+        padding: 25px 20px;
+      }
+
+      .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .education-header h3 {
+        font-size: 18px;
+      }
+
+      .education-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+      }
+
+      .education-description {
+        font-size: 14px;
+      }
+    }
+
+    /* للشاشات الصغيرة جداً */
+    @media (max-width: 480px) {
+      .education-grid {
+        gap: 15px;
+      }
+
+      .education-item {
+        padding: 20px 15px;
+      }
+
+      .education-header h3 {
+        font-size: 16px;
+      }
+
+      .education-period {
+        font-size: 12px;
+        padding: 4px 10px;
+      }
+    }
+
+
 
     /* ========== SERVICES SECTION ========== */
     .services-grid {
@@ -1201,195 +1409,487 @@
     }
 
     /* ========== CERTIFICATIONS SECTION ========== */
-#certifications {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
-  border-top: 1px solid rgba(6, 182, 212, 0.15);
-  border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+    #certifications {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+      border-top: 1px solid rgba(6, 182, 212, 0.15);
+      border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .cert-card {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-radius: 20px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease-out both;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 15px 30px rgba(6, 182, 212, 0.18);
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.3s ease;
+    }
+
+    .cert-card:hover::before {
+      height: 100%;
+    }
+
+    .cert-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(6, 182, 212, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .cert-icon i {
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    .cert-content h3 {
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .cert-issuer,
+    .cert-date {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .cert-issuer i,
+    .cert-date i {
+      color: var(--accent);
+      width: 16px;
+      font-size: 14px;
+    }
+
+    .cert-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .cert-tag {
+      background: rgba(6, 182, 212, 0.08);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .cert-tag:hover {
+      background: var(--accent);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .cert-link:hover {
+      gap: 10px;
+      color: var(--text);
+    }
+
+    .cert-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      padding: 30px;
+      background: rgba(6, 182, 212, 0.03);
+      border-radius: 20px;
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      margin-top: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 150px;
+    }
+
+    /* Animation delays for cards */
+    .cert-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .cert-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .cert-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .cert-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cert-stats {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .stat-item {
+        width: 100%;
+      }
+
+      .stat-number {
+        font-size: 28px;
+      }
+    }
+
+
+    /* ========== EDUCATION GRID ========== */
+    /* ========== EDUCATION GRID ========== */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .education-item {
+      display: flex;
+      gap: 20px;
+      background: rgba(6, 182, 212, 0.03) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(6, 182, 212, 0.2) !important;
+      border-radius: 15px;
+      padding: 30px;
+      transition: 0.3s;
+      animation: fadeInUp 0.8s ease-out both;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* طبقة خلفية إضافية للشفافية */
+    .education-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.3);
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(6, 182, 212, 0.2);
+      border-color: var(--accent) !important;
+    }
+
+    .education-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: rgba(6, 182, 212, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent);
+      backdrop-filter: blur(5px);
+    }
+
+    .education-icon i {
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    .education-content {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .education-header h3 {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 600;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .education-period {
+      background: rgba(6, 182, 212, 0.15);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+      border: 1px solid var(--accent);
+      backdrop-filter: blur(5px);
+    }
+
+    .education-subtitle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .education-subtitle i {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .education-field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .education-field i {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .education-description {
+      color: rgba(226, 232, 240, 0.9);
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 14px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .education-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .topic-tag {
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--accent);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      transition: 0.3s;
+      backdrop-filter: blur(5px);
+    }
+
+    .topic-tag:hover {
+      background: var(--accent);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Responsive for tablets */
+    @media (max-width: 992px) {
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .education-item {
+        padding: 25px;
+      }
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 768px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .education-item {
+        flex-direction: column;
+        padding: 25px 20px;
+      }
+
+      .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .education-header h3 {
+        font-size: 18px;
+      }
+
+      .education-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+      }
+
+      .education-description {
+        font-size: 14px;
+      }
+    }
+
+    /* للشاشات الصغيرة جداً */
+    @media (max-width: 480px) {
+      .education-grid {
+        gap: 15px;
+      }
+
+      .education-item {
+        padding: 20px 15px;
+      }
+
+      .education-header h3 {
+        font-size: 16px;
+      }
+
+      .education-period {
+        font-size: 12px;
+        padding: 4px 10px;
+      }
+    }
+
+    /* ========== CONTACT SOCIAL ICONS ========== */
+.contact-social-icons {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.social-icons.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin: 20px 0 30px;
 }
 
-.cert-card {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(6, 182, 212, 0.02) 100%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(6, 182, 212, 0.15);
-  border-radius: 20px;
-  padding: 25px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-.cert-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 15px 30px rgba(6, 182, 212, 0.18);
-}
-
-.cert-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 0;
-  background: var(--accent);
-  transition: height 0.3s ease;
-}
-
-.cert-card:hover::before {
-  height: 100%;
-}
-
-.cert-icon {
+.social-icons.centered a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
   background: rgba(6, 182, 212, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  transition: 0.3s;
 }
 
-.cert-icon i {
+.social-icons.centered a:hover {
+  transform: translateY(-5px);
+  background: var(--accent);
+  box-shadow: 0 5px 20px rgba(6, 182, 212, 0.4);
+}
+
+.social-icons.centered a:hover i {
+  color: #000;
+}
+
+.social-icons.centered i {
   font-size: 24px;
   color: var(--accent);
+  transition: 0.3s;
 }
 
-.cert-content h3 {
-  color: var(--text);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.cert-issuer,
-.cert-date {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.cert-issuer i,
-.cert-date i {
-  color: var(--accent);
-  width: 16px;
-  font-size: 14px;
-}
-
-.cert-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 15px 0;
-}
-
-.cert-tag {
-  background: rgba(6, 182, 212, 0.08);
-  color: var(--accent);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 500;
-  border: 1px solid rgba(6, 182, 212, 0.2);
-  transition: all 0.3s ease;
-}
-
-.cert-tag:hover {
-  background: var(--accent);
-  color: #000;
-  transform: scale(1.05);
-}
-
-.cert-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: 10px;
-}
-
-.cert-link:hover {
-  gap: 10px;
-  color: var(--text);
-}
-
-.cert-stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding: 30px;
-  background: rgba(6, 182, 212, 0.03);
-  border-radius: 20px;
-  border: 1px solid rgba(6, 182, 212, 0.15);
-  margin-top: 20px;
-}
-
-.stat-item {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.stat-number {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: var(--muted);
-  max-width: 150px;
-}
-
-/* Animation delays for cards */
-.cert-card:nth-child(1) { animation-delay: 0.1s; }
-.cert-card:nth-child(2) { animation-delay: 0.2s; }
-.cert-card:nth-child(3) { animation-delay: 0.3s; }
-.cert-card:nth-child(4) { animation-delay: 0.4s; }
-
-/* Responsive */
+/* للشاشات الصغيرة */
 @media (max-width: 768px) {
-  .certifications-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .social-icons.centered {
+    gap: 15px;
   }
   
-  .cert-stats {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+  .social-icons.centered a {
+    width: 45px;
+    height: 45px;
   }
   
-  .stat-item {
-    width: 100%;
-  }
-  
-  .stat-number {
-    font-size: 28px;
+  .social-icons.centered i {
+    font-size: 20px;
   }
 }
-
   </style>
 </head>
 
@@ -1445,6 +1945,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
         <a href="#services">Services</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -1483,6 +1984,15 @@
           <a href="https://github.com/mustafashaliq" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>
           </a>
+          <a href="https://www.instagram.com/mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/201129535104" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.tiktok.com/@mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
         </div>
 
         <a class="btn" href="#">Download CV</a>
@@ -1519,11 +2029,12 @@
   </section>
 
   <!-- EDUCATION -->
+  <!-- EDUCATION -->
   <section id="education">
     <div class="container">
       <h2>Education</h2>
 
-      <div class="education-timeline">
+      <div class="education-grid">
         <!-- University Education -->
         <div class="education-item">
           <div class="education-icon">
@@ -1591,111 +2102,111 @@
 
 
   <!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="container">
-    <h2>Certifications</h2>
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
 
-    <div class="certifications-grid">
-      <!-- الشهادة الأولى - SQL ITI -->
-      <div class="cert-card">
-        <div class="cert-icon">
-          <i class="fa-solid fa-certificate"></i>
+      <div class="certifications-grid">
+        <!-- الشهادة الأولى - SQL ITI -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div class="cert-content">
+            <h3>Database Fundamentals</h3>
+            <div class="cert-issuer">
+              <i class="fa-solid fa-building"></i>
+              <span>Maharaa-Tech (ITI MOOCA)</span>
+            </div>
+            <div class="cert-date">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Issued: 2026</span>
+            </div>
+            <div class="cert-skills">
+              <span class="cert-tag">SQL</span>
+            </div>
+            <a href="#" class="cert-link">
+              <i class="fa-solid fa-up-right-from-square"></i> Show Credential
+            </a>
+          </div>
         </div>
-        <div class="cert-content">
-          <h3>Database Fundamentals</h3>
-          <div class="cert-issuer">
-            <i class="fa-solid fa-building"></i>
-            <span>Maharaa-Tech (ITI MOOCA)</span>
+
+        <!-- الشهادة الثانية - Advanced Excel -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fa-regular fa-file-excel"></i>
           </div>
-          <div class="cert-date">
-            <i class="fa-regular fa-calendar"></i>
-            <span>Issued: 2026</span>
+          <div class="cert-content">
+            <h3>Advanced Excel</h3>
+            <div class="cert-issuer">
+              <i class="fa-solid fa-building"></i>
+              <span>Edraak</span>
+            </div>
+            <div class="cert-date">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Issued: 2026</span>
+            </div>
+            <div class="cert-skills">
+              <span class="cert-tag">Excel Formulas</span>
+              <span class="cert-tag">Pivot Tables</span>
+              <span class="cert-tag">Power Query</span>
+              <span class="cert-tag">Power Pivot</span>
+              <span class="cert-tag">Visualisation</span>
+            </div>
+            <a href="#" class="cert-link">
+              <i class="fa-solid fa-up-right-from-square"></i> Show Credential
+            </a>
           </div>
-          <div class="cert-skills">
-            <span class="cert-tag">SQL</span>
+        </div>
+
+
+        <!-- الشهادة الرابعة - IBM -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fa-solid fa-chart-line"></i>
           </div>
-          <a href="#" class="cert-link">
-            <i class="fa-solid fa-up-right-from-square"></i> Show Credential
-          </a>
+          <div class="cert-content">
+            <h3>Data Analyst Specialist</h3>
+            <div class="cert-issuer">
+              <i class="fa-solid fa-building"></i>
+              <span>Digital Egypt Pioneers Initiative - (DEPI)</span>
+            </div>
+            <div class="cert-date">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Issued: 2026</span>
+            </div>
+            <div class="cert-skills">
+              <span class="cert-tag">Statistics</span>
+              <span class="cert-tag">Problem Solving</span>
+              <span class="cert-tag">Excel</span>
+              <span class="cert-tag">SQL</span>
+              <span class="cert-tag">Power BI</span>
+              <span class="cert-tag">Python</span>
+            </div>
+            <a href="#" class="cert-link">
+              <i class="fa-solid fa-up-right-from-square"></i> Show Credential
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- الشهادة الثانية - Advanced Excel -->
-      <div class="cert-card">
-        <div class="cert-icon">
-<i class="fa-regular fa-file-excel"></i>
+      <!-- عرض إحصائي للشهادات -->
+      <div class="cert-stats">
+        <div class="stat-item">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Professional Certifications</span>
         </div>
-        <div class="cert-content">
-          <h3>Advanced Excel</h3>
-          <div class="cert-issuer">
-            <i class="fa-solid fa-building"></i>
-            <span>Edraak</span>
-          </div>
-          <div class="cert-date">
-            <i class="fa-regular fa-calendar"></i>
-            <span>Issued: 2026</span>
-          </div>
-          <div class="cert-skills">
-            <span class="cert-tag">Excel Formulas</span>
-            <span class="cert-tag">Pivot Tables</span>
-            <span class="cert-tag">Power Query</span>
-            <span class="cert-tag">Power Pivot</span>
-            <span class="cert-tag">Visualisation</span>
-          </div>
-          <a href="#" class="cert-link">
-            <i class="fa-solid fa-up-right-from-square"></i> Show Credential
-          </a>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Platforms (Coursera, DEPI, etc.)</span>
         </div>
-      </div>
-
-
-      <!-- الشهادة الرابعة - IBM -->
-      <div class="cert-card">
-        <div class="cert-icon">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
-        <div class="cert-content">
-          <h3>Data Analyst Specialist</h3>
-          <div class="cert-issuer">
-            <i class="fa-solid fa-building"></i>
-            <span>Digital Egypt Pioneers Initiative - (DEPI)</span>
-          </div>
-          <div class="cert-date">
-            <i class="fa-regular fa-calendar"></i>
-            <span>Issued: 2026</span>
-          </div>
-          <div class="cert-skills">
-            <span class="cert-tag">Statistics</span>
-            <span class="cert-tag">Problem Solving</span>
-            <span class="cert-tag">Excel</span>
-            <span class="cert-tag">SQL</span>
-            <span class="cert-tag">Power BI</span>
-            <span class="cert-tag">Python</span>
-          </div>
-          <a href="#" class="cert-link">
-            <i class="fa-solid fa-up-right-from-square"></i> Show Credential
-          </a>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Skills Verified</span>
         </div>
       </div>
     </div>
-
-    <!-- عرض إحصائي للشهادات -->
-    <div class="cert-stats">
-      <div class="stat-item">
-        <span class="stat-number">3+</span>
-        <span class="stat-label">Professional Certifications</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Platforms (Coursera, DEPI, etc.)</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">10+</span>
-        <span class="stat-label">Skills Verified</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- SERVICES -->
@@ -1795,17 +2306,17 @@
           </ul>
         </div>
 
-         <!-- بطاقة Soft Skills الجديدة -->
-      <div class="skill-card">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Communication Skills</li>
-          <li>Presentation Skills</li>
-          <li>Decision Making</li>
-          <li>Teamwork</li>
-          <li>Problem Solving</li>
-        </ul>
-      </div>
+        <!-- بطاقة Soft Skills الجديدة -->
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Communication Skills</li>
+            <li>Presentation Skills</li>
+            <li>Decision Making</li>
+            <li>Teamwork</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
 
 
       </div>
@@ -1815,7 +2326,7 @@
         <div class="tools-title">Tools & Technologies</div>
         <div class="tools-slider-container">
           <div class="tools-slider">
-                        <div class="tool-item">
+            <div class="tool-item">
               <i class="fa-brands fa-git-alt" title="Git"></i>
               <span>Git</span>
             </div>
@@ -1893,15 +2404,16 @@
   </section>
 
   <!-- PROJECTS -->
+  <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
       <h2>Projects</h2>
 
       <div class="projects-grid">
         <!-- المشروع الأول - Sales Analysis Dashboard -->
-        <div class="project">
+        <div class="project" onclick="openProjectModal('project1')">
           <div class="project-image"
-            style="background-image: url('https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/650666125_902175035905509_4659630836909625235_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=ZJoJ8sb2Pf0Q7kNvwGIjTgy&_nc_oc=AdmtoDhvDE364fMFghKDDOTlI7JzTFdaHvISWDFcSaXyfDjaJVHJAkVgPrbXBwBC20g&_nc_zt=23&_nc_ht=scontent.fcai19-6.fna&_nc_gid=-EU_KakfMYc-R4jma6ksMA&_nc_ss=8&oh=00_AfxL1QARcyqb7xxDZFCtljfiw_413Y15LhII1Ok5tYcJqQ&oe=69B65495');">
+            style="background-image: url('https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/650666125_902175035905509_4659630836909625235_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGE_fLGAvgCwynb5HvznGMHvCESPDkqOJ68IRI8OSo4nlX6qe4xNEd8xmZ_EbHAcWaAZfQh2EJ6J5dJpjIz1_l6&_nc_ohc=3InCu6VcMGQQ7kNvwFN0IGL&_nc_oc=Adn1GX_wmylnmNfz8ZFMo4xlIVNgEw-mWwNHRmq2niZIIqYkQChwQgjvX6m4KZNMEq4&_nc_zt=23&_nc_ht=scontent.fcai19-6.fna&_nc_gid=OliGNscqPoY8rj33EP8uOw&_nc_ss=8&oh=00_AfypYZhVRLGtqs96lVQnL8ZpI7cvoO1BcCiOABaSRn8lXw&oe=69BFFF95');">
           </div>
           <div class="project-content">
             <h3>Sales Analysis Dashboard</h3>
@@ -1909,14 +2421,14 @@
               Interactive dashboard analyzing sales performance and regional
               trends using Power BI and SQL.
             </p>
-            <a class="btn" href="#">View Case Study</a>
+            <button class="btn" onclick="event.stopPropagation(); openProjectModal('project1')">View Case Study</button>
           </div>
         </div>
 
         <!-- المشروع الثاني - Customer Segmentation -->
-        <div class="project">
+        <div class="project" onclick="openProjectModal('project2')">
           <div class="project-image"
-            style="background-image: url('https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/648454292_900067649449581_4590768731198778295_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=TRKiaSwsqtAQ7kNvwErku2V&_nc_oc=AdkbIUJuG7wMzYk9ZMlzuv98esuFLn1VhCwIY4HzOkhXnqkwQHluANAhTQnDpXa9I6M&_nc_zt=23&_nc_ht=scontent.fcai19-6.fna&_nc_gid=H_pVQ8XheiS_beV_LW_9hg&_nc_ss=8&oh=00_AfzkD3sKnILiQun4mGBMOEys9G1DfPMgL-eAgbUuvz4jPQ&oe=69B63BA9');">
+            style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQHRVZ8GBTwyxQ/feedshare-shrink_2048_1536/B4DZzFhAN_KYAk-/0/1772840289544?e=1775692800&v=beta&t=i9--OgFJGLP1DMZzTS6AKN0zAmjCp7e9X66JlO_3b4Y');">
           </div>
           <div class="project-content">
             <h3>Customer Churn</h3>
@@ -1924,12 +2436,12 @@
               Statistical analysis to segment customers based on behavior
               patterns using Python and machine learning.
             </p>
-            <a class="btn" href="#">View Case Study</a>
+            <button class="btn" onclick="event.stopPropagation(); openProjectModal('project2')">View Case Study</button>
           </div>
         </div>
 
         <!-- المشروع الثالث - Market Trend Analysis -->
-        <div class="project">
+        <div class="project" onclick="openProjectModal('project3')">
           <div class="project-image"
             style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');">
           </div>
@@ -1939,26 +2451,102 @@
               Exploratory data analysis project discovering emerging market
               patterns using time series analysis.
             </p>
-            <a class="btn" href="#">View Case Study</a>
+            <button class="btn" onclick="event.stopPropagation(); openProjectModal('project3')">View Case Study</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
+  <!-- Modal for Project Details -->
+  <div id="projectModal"
+    style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
+    <div
+      style="position: relative; background: var(--card); margin: 5% auto; padding: 20px; width: 90%; max-width: 800px; border-radius: 20px; border: 2px solid var(--accent); max-height: 85vh; overflow-y: auto;">
 
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--accent);">
+        <h2 id="modalTitle" style="color: var(--accent); margin: 0;">Project Title</h2>
+        <span onclick="closeProjectModal()"
+          style="color: var(--muted); font-size: 28px; cursor: pointer;">&times;</span>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <img id="modalImage" src="" alt="Project Image"
+          style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px; border: 2px solid var(--accent);">
+      </div>
+
+      <p id="modalDescription" style="color: var(--text); line-height: 1.8; margin-bottom: 20px;">Project description
+        here</p>
+
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; padding: 15px; background: rgba(6,182,212,0.1); border-radius: 10px;">
+        <div><i class="fa-regular fa-calendar" style="color: var(--accent);"></i> <strong>Date:</strong> <span
+            id="modalDate">2025</span></div>
+        <div><i class="fa-solid fa-tag" style="color: var(--accent);"></i> <strong>Category:</strong> <span
+            id="modalCategory">Analysis</span></div>
+        <div><i class="fa-solid fa-wrench" style="color: var(--accent);"></i> <strong>Tools:</strong> <span
+            id="modalTools">Multiple</span></div>
+      </div>
+
+      <div id="modalTech" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;"></div>
+
+      <div style="display: flex; gap: 15px; margin-top: 25px;">
+        <a href="#" id="modalLiveDemo" class="btn" style="background: var(--accent); color: #000;" target="_blank">Live
+          Demo</a>
+        <a href="#" id="modalSourceCode" class="btn"
+          style="background: transparent; border: 2px solid var(--accent); color: var(--accent);" target="_blank">Source
+          Code</a>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- CONTACT -->
+  <!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+
+    <!-- أيقونات التواصل الاجتماعي (موسطة) -->
+    <div class="contact-social-icons">
+      <h3 style="text-align: center; color: var(--accent); margin-bottom: 20px;">Find Me On</h3>
+      <div class="social-icons centered">
+          <a href="https://www.facebook.com/mostafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mustafa-shaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.threads.com/@mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-threads"></i>
+          </a>
+          <a href="https://github.com/mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/201129535104" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.tiktok.com/@mustafashaliq" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+      </div>
+    </div>
+
+    <!-- نموذج الاتصال -->
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
   <footer>© 2026 Mustafa Shaliq | Data Analyst Portfolio</footer>
 
@@ -2077,10 +2665,89 @@
     }, observerOptions);
 
     // Observe all sections and cards
-    document.querySelectorAll('section, .skill-card, .card, .project, h2, .tools-section, .education-item').forEach(el => {
+    document.querySelectorAll('section, .skill-card, .card, .project, h2, .tools-section, .education-item, .education-grid').forEach(el => {
       el.style.opacity = "0";
       observer.observe(el);
     });
+
+
+    <!-- نافذة منبثقة -->
+
+    // Simple Project Modal Functions
+    function openProjectModal(projectId) {
+      const projects = {
+        project1: {
+          title: 'Sales Analysis Dashboard',
+          image: 'https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/650666125_902175035905509_4659630836909625235_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGE_fLGAvgCwynb5HvznGMHvCESPDkqOJ68IRI8OSo4nlX6qe4xNEd8xmZ_EbHAcWaAZfQh2EJ6J5dJpjIz1_l6&_nc_ohc=3InCu6VcMGQQ7kNvwFN0IGL&_nc_oc=Adn1GX_wmylnmNfz8ZFMo4xlIVNgEw-mWwNHRmq2niZIIqYkQChwQgjvX6m4KZNMEq4&_nc_zt=23&_nc_ht=scontent.fcai19-6.fna&_nc_gid=OliGNscqPoY8rj33EP8uOw&_nc_ss=8&oh=00_AfypYZhVRLGtqs96lVQnL8ZpI7cvoO1BcCiOABaSRn8lXw&oe=69BFFF95',
+          description: 'This comprehensive Sales Analysis Dashboard provides deep insights into business performance across multiple dimensions. The dashboard visualizes key metrics including revenue trends, regional performance, product category analysis, and customer segmentation. Built with Power BI and SQL, it features interactive filters and drill-down capabilities.',
+          date: '2025',
+          category: 'Business Intelligence',
+          tools: 'Power BI, SQL',
+          technologies: ['Power BI', 'SQL', 'DAX', 'Data Modeling'],
+          liveDemo: '#',
+          sourceCode: '#'
+        },
+        project2: {
+          title: 'Customer Churn Analysis',
+          image: 'https://media.licdn.com/dms/image/v2/D4D22AQHRVZ8GBTwyxQ/feedshare-shrink_2048_1536/B4DZzFhAN_KYAk-/0/1772840289544?e=1775692800&v=beta&t=i9--OgFJGLP1DMZzTS6AKN0zAmjCp7e9X66JlO_3b4Y',
+          description: 'A machine learning project focused on predicting customer churn for a telecommunications company. The analysis includes feature engineering, model comparison, and actionable insights for customer retention strategies. Achieved 85% accuracy using Random Forest classifier.',
+          date: '2025',
+          category: 'Machine Learning',
+          tools: 'Python, Scikit-learn',
+          technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib'],
+          liveDemo: '#',
+          sourceCode: '#'
+        },
+        project3: {
+          title: 'Market Trend Analysis',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+          description: 'Time series analysis project examining market trends and forecasting future patterns. The project uses statistical methods to identify seasonal patterns, trends, and make predictions for business planning. Includes interactive visualizations and forecast models.',
+          date: '2025',
+          category: 'Time Series',
+          tools: 'Python, Statsmodels',
+          technologies: ['Time Series', 'Python', 'Statsmodels', 'Prophet'],
+          liveDemo: '#',
+          sourceCode: '#'
+        }
+      };
+
+      const project = projects[projectId];
+
+      document.getElementById('modalTitle').textContent = project.title;
+      document.getElementById('modalImage').src = project.image;
+      document.getElementById('modalDescription').textContent = project.description;
+      document.getElementById('modalDate').textContent = project.date;
+      document.getElementById('modalCategory').textContent = project.category;
+      document.getElementById('modalTools').textContent = project.tools;
+      document.getElementById('modalLiveDemo').href = project.liveDemo;
+      document.getElementById('modalSourceCode').href = project.sourceCode;
+
+      // Add technology tags
+      const techContainer = document.getElementById('modalTech');
+      techContainer.innerHTML = '';
+      project.technologies.forEach(tech => {
+        const tag = document.createElement('span');
+        tag.style.cssText = 'background: rgba(6,182,212,0.1); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 13px; border: 1px solid var(--accent);';
+        tag.textContent = tech;
+        techContainer.appendChild(tag);
+      });
+
+      document.getElementById('projectModal').style.display = 'block';
+    }
+
+    function closeProjectModal() {
+      document.getElementById('projectModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('projectModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+
   </script>
 </body>
 
