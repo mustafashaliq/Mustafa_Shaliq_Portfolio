@@ -1833,63 +1833,154 @@
     }
 
     /* ========== CONTACT SOCIAL ICONS ========== */
-.contact-social-icons {
-  margin-bottom: 40px;
-  text-align: center;
-}
+    .contact-social-icons {
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-.social-icons.centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin: 20px 0 30px;
-}
+    .social-icons.centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin: 20px 0 30px;
+    }
 
-.social-icons.centered a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: rgba(6, 182, 212, 0.1);
-  border-radius: 50%;
+    .social-icons.centered a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(6, 182, 212, 0.1);
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      transition: 0.3s;
+    }
+
+    .social-icons.centered a:hover {
+      transform: translateY(-5px);
+      background: var(--accent);
+      box-shadow: 0 5px 20px rgba(6, 182, 212, 0.4);
+    }
+
+    .social-icons.centered a:hover i {
+      color: #000;
+    }
+
+    .social-icons.centered i {
+      font-size: 24px;
+      color: var(--accent);
+      transition: 0.3s;
+    }
+
+    /* للشاشات الصغيرة */
+    @media (max-width: 768px) {
+      .social-icons.centered {
+        gap: 15px;
+      }
+
+      .social-icons.centered a {
+        width: 45px;
+        height: 45px;
+      }
+
+      .social-icons.centered i {
+        font-size: 20px;
+      }
+    }
+
+    /* ========== HIRE ME BUTTON ========== */
+.btn-hire {
+  background: transparent;
   border: 2px solid var(--accent);
-  transition: 0.3s;
-}
-
-.social-icons.centered a:hover {
-  transform: translateY(-5px);
-  background: var(--accent);
-  box-shadow: 0 5px 20px rgba(6, 182, 212, 0.4);
-}
-
-.social-icons.centered a:hover i {
-  color: #000;
-}
-
-.social-icons.centered i {
-  font-size: 24px;
   color: var(--accent);
+}
+
+.btn-hire:hover {
+  background: var(--accent);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(6, 182, 212, 0.5);
+}
+
+/* تعديل على الـ btn الأصلي ليكون متناسق */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 500;
   transition: 0.3s;
+  text-align: center;
+  min-width: 140px;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 480px) {
+  .hero-text div {
+    justify-content: center;
+  }
+  
+  .btn {
+    min-width: 120px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+
+/* ========== HERO BUTTONS RESPONSIVE ========== */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 /* للشاشات الصغيرة */
 @media (max-width: 768px) {
-  .social-icons.centered {
-    gap: 15px;
+  .hero-buttons {
+    justify-content: center;
+    width: 100%;
   }
   
-  .social-icons.centered a {
-    width: 45px;
-    height: 45px;
+  .hero-text {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .social-icons.centered i {
-    font-size: 20px;
+  .hero-text p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .social-icons {
+    justify-content: center !important;
   }
 }
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 80%;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+
   </style>
 </head>
 
@@ -1995,7 +2086,10 @@
           </a>
         </div>
 
-        <a class="btn" href="#">Download CV</a>
+        <div class="hero-buttons">
+  <a class="btn" href="#">Download CV</a>
+  <a class="btn btn-hire" href="#contact">Hire Me</a>
+</div>
       </div>
 
       <div class="hero-img">
@@ -2503,14 +2597,14 @@
 
   <!-- CONTACT -->
   <!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
 
-    <!-- أيقونات التواصل الاجتماعي (موسطة) -->
-    <div class="contact-social-icons">
-      <h3 style="text-align: center; color: var(--accent); margin-bottom: 20px;">Find Me On</h3>
-      <div class="social-icons centered">
+      <!-- أيقونات التواصل الاجتماعي (موسطة) -->
+      <div class="contact-social-icons">
+        <h3 style="text-align: center; color: var(--accent); margin-bottom: 20px;">Find Me On</h3>
+        <div class="social-icons centered">
           <a href="https://www.facebook.com/mostafashaliq" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-facebook"></i>
           </a>
@@ -2535,18 +2629,18 @@
           <a href="https://www.tiktok.com/@mustafashaliq" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-tiktok"></i>
           </a>
+        </div>
       </div>
-    </div>
 
-    <!-- نموذج الاتصال -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+      <!-- نموذج الاتصال -->
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 
   <footer>© 2026 Mustafa Shaliq | Data Analyst Portfolio</footer>
 
